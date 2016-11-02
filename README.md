@@ -12,4 +12,4 @@ ZeroMQ
 - Fully distributed, no server required
 - No single node can bring down a system
 - Can use multithreading to utilizie concurrency
-
+- Internally buffers messages

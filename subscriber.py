@@ -1,6 +1,7 @@
 from threading import Thread
 import zmq, socketio, eventlet
 from flask import Flask, render_template
+from flask_socketio import send
 
 sio = socketio.Server()
 app = Flask(__name__)
@@ -32,7 +33,10 @@ def init_zeromq():
     subscriber.setsockopt(zmq.SUBSCRIBE, "")
 
     while True:
-        print subscriber.recv()
+        r = subscriber.recv()
+        print r
+
+
 
     subscriber.close()
     context.term()
